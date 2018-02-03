@@ -67,6 +67,19 @@
                 </dependency>
                 
                 <dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+			<scope>compile</scope>
+		</dependency>
+                
+                <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+                
+                <dependency>
                     <groupId>org.webjars</groupId>
                     <artifactId>bootstrap</artifactId>
                     <version>3.3.7-1</version>

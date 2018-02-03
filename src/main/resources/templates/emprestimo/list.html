@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Lista de Emprestimo</title>
+    </head>
+    <body>
+        <h1 layout:fragment="header">Biblioteca</h1>
+        <div layout:fragment="content" class="container">
+            <div>
+                <a href="#" th:href="@{'/emprestimo/novo/'}">Novo emprestimo</a>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Data Inicio</td>
+                        <td>Data Fim</td>
+                        <td>Data Livro</td>
+                        <td>Usuario</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${emprestimos.empty}">
+                        <td colspan="2">Sem Emprestimos</td>
+                    </tr>
+                    <tr th:each="emprestimo : ${emprestimos}">
+                        <td th:text="${emprestimo.id}">Id</td>
+                        <td th:text="${emprestimo.dataEmprestimo}"> Data Inicio</td>
+                        <td th:text="${emprestimo.dataDevolucao}"> Data Final</td>
+                        <td th:text="${emprestimo.livro.titulo}"> Livro</td>
+                        <td th:text="${emprestimo.usuario.username}"> Usuario</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+    
+    <center>
+        <form id="userForm" th:action="@{/usuarios/autentication}" th:object="${userForm}" action="#" method="post" style="margin-top: 100px;">
+                <label>Usuario: </label><input type="text" th:field="*{username}"/><span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="form-control">Nome Error</span><br/><br/>
+		<label>Senha: </label><input type="password" th:field="*{password}"/><span  th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="form-control">Nome Error</span><br/><br/>
+		<input type="submit" name="login" value="login" />
+	</form>
+    </center>
+</body>
+</html>

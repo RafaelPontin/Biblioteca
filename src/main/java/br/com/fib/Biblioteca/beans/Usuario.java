@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -22,12 +23,18 @@ public class Usuario {
 	private String username;
 	
         @NotNull()
-        @Size(min = 5, max = 30)
+        @Size(min = 5, max = 200)
 	private String password;
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Review> reviews = new ArrayList<>();
 	
+        @OneToMany(mappedBy="usuario", targetEntity = Role.class)
+       	private List<Role> roles = new ArrayList<>();
+        
+        @OneToMany(mappedBy="usuario")
+	private List<Emprestimo> emprestimos = new ArrayList<>();
+        
 	public List<Review> getReviews() {
 		return reviews;
 	}
@@ -59,11 +66,22 @@ public class Usuario {
 	public void setPassword(String passsword) {
 		this.password = passsword;
 	}
-	
-	
-	
-	
-	
-	
 
+        public List<Role> getRoles() {
+            return roles;
+        }
+
+        public void setRoles(List<Role> roles) {
+            this.roles = roles;
+        }
+
+    public List<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+
+    public void setEmprestimos(List<Emprestimo> emprestimos) {
+        this.emprestimos = emprestimos;
+    }
+	
+        
 }

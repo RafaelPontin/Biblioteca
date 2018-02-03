@@ -8,13 +8,14 @@
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" />
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}" />
         <link rel="stylesheet" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.css}" />
+        <link rel="stylesheet" href="estilo.css"/> 
     </head>
     <body>
-        <div class="container">
+        <div class="container principal">
             <nav class="navbar navbar-default navbar-static-top">
                 <div class="navbar-header">
                     <a class="navbar-brand" th:href="@{/}">
-                        <img th:src="@{/img/livros.jpg}" src="../static/img/livros.png" width="50px"/></a>
+                        <img th:src="@{/img/fib.jpg}" src="../static/img/livros.png" width="30px"/></a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a class="brand" th:href="@{/livros/list}" href="#"> Livros
@@ -23,6 +24,10 @@
                         </a></li>
                     <li><a class="brand" th:href="@{/usuarios/list}" href="#"> Usuários
                         </a></li>
+                    <li><a class="brand" th:href="@{/emprestimo/list}" href="#"> Emprestimo
+                        </a></li>
+                    <li><a class="brand" th:href="@{/usuarios/logout}" href="#"> Logout
+                   </a></li>
                 </ul>
             </nav>
             <h1 layout:fragment="header">cabeçalho falso</h1>
