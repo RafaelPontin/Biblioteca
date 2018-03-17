@@ -6,7 +6,6 @@
 package br.com.fib.Biblioteca.repository;
 
 import br.com.fib.Biblioteca.beans.Usuario;
-import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
